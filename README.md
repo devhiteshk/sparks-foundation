@@ -1,8 +1,9 @@
 ## Frontend - React App
 ### ✅Run
 
-- `npm install`
-- `npm start `
+`npm install`
+
+`npm start `
 
 ### ✅Build
 
@@ -12,11 +13,13 @@
 
 ### ✅Run
 
-- npm install
-- nodemon index.js
+`npm install`
+
+`nodemon index.js`
 
 ### ✅Environment Variables (.env)
-- MONGOP="Your mongoDb Password"
+
+`MONGOP="Your mongoDb Password"`
 
 ## The Spark Foundation Internship (GRIP jan 2023)
 
