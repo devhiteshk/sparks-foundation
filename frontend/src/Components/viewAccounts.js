@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import AccountsTable from "./AccountsTable";
 
-let baseURL = "http://localhost:4000/api/accounts";
+let baseURL = "https://banking-system-rvpf.onrender.com/api/accounts";
 
 function ViewAccounts({ accounts, setAccounts, setId }) {
   useEffect(() => {

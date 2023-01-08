@@ -9,7 +9,7 @@ import TransferFunds from "./Components/TransferFunds";
 import Transactions from "./Components/Transactions";
 
 require("@tailwindcss/forms");
-let baseURL = "http://localhost:4000/api/accounts";
+let baseURL = "https://banking-system-rvpf.onrender.com/api/accounts";
 
 function App() {
   const [person, setPerson] = useState("");

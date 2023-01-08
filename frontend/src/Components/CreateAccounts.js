@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const baseURL = "http://localhost:4000/api/accounts/new";
+const baseURL = "https://banking-system-rvpf.onrender.com/api/accounts/new";
 
 function CreateAccounts() {
   const [email, setEmail] = useState("");

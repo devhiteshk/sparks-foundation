@@ -1,10 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-let transactions = "";
-const tranUrl = "http://localhost:4000/api/transactions";
+import { Link } from "react-router-dom";
+const tranUrl = "https://banking-system-rvpf.onrender.com/api/transactions";
 
 function Transactions({ setId }) {
   const [transaction, setTransaction] = useState("");
+  useEffect(() => {
+    getData();
+  }, []);
+
+  let transactions = "";
 
   let getData = () => {
     axios.get(tranUrl).then((res) => setTransaction(res.data.reverse()));
@@ -12,10 +17,9 @@ function Transactions({ setId }) {
 
   useEffect(() => {
     getData();
-    setId("");
-  }, [setId]);
+  }, [transactions]);
 
-  if (transaction.length > 0) {
+  if (transaction) {
     transactions = transaction.map((i) => (
       <tbody key={i.date} className="divide-y divide-gray-200">
         <tr>
@@ -40,7 +44,15 @@ function Transactions({ setId }) {
   }
 
   return (
-    <div className="overflow-hidden overflow-x-auto rounded-lg border border-gray-200">
+    <div>
+      <div className="mt-2 mb-2 flex flex-wrap justify-center gap-4">
+        <Link
+          className="block rounded bg-indigo-500 px-12 py-3 text-sm font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring active:bg-indigo-500 sm:w-auto"
+          to="/view-all-accounts"
+        >
+          View all Accounts
+        </Link>
+      </div>
       <table className="min-w-full divide-y divide-gray-200 text-sm">
         <thead className="bg-gray-100">
           <tr>

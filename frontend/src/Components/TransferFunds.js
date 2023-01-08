@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 let payer = "";
 let person_to_send = "";
 
-const baseUrl = "http://localhost:4000/api/accounts";
+const baseUrl = "https://banking-system-rvpf.onrender.com/api/accounts";
 
 function TransferFunds({ id, person, setId, setPerson, accounts }) {
   const [money, setMoney] = useState("");
+
   let Button = "";
   let error = "";
   let handleClick = () => {
@@ -22,6 +23,11 @@ function TransferFunds({ id, person, setId, setPerson, accounts }) {
     setId("");
     setPerson("");
   };
+
+  if (money[money.length - 1] === "e") {
+    let l = money.length - 1;
+    setMoney(money.slice(0, l));
+  }
 
   if (person) {
     payer = accounts.filter((i) => i._id === id);
@@ -95,7 +101,6 @@ function TransferFunds({ id, person, setId, setPerson, accounts }) {
           <br />
           <input
             className="py-1 px-4"
-            type="Number"
             id="pay-amount"
             value={money}
             onChange={(e) => setMoney(e.target.value)}
