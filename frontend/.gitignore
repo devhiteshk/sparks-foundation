@@ -6,7 +6,6 @@
 .pnp.js
 package-lock.json
 README.md
-tailwind.config.js
 
 # testing
 /coverage
